@@ -11,22 +11,28 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
         <style>
-            nav { background-color: #333; padding: 1rem; margin-bottom: 2rem; }
+            nav { background-color: #333; padding: 1rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; }
             nav a { color: white; margin-right: 1.5rem; text-decoration: none; }
             nav a:hover { text-decoration: underline; }
-            .nav-right { float: right; }
+            .nav-left, .nav-right { display: flex; align-items: center; }
         </style>
     </head>
     <body>
         <nav>
-            <div>
-                <a href="{{ path('app_home') }}">Accueil</a>
+            <div class="nav-left">
+                <a href="{{ path('app_home') }}"> Accueil</a>
+                <a href=""> Qui sommes-nous</a>
+                <a href=""> Politique de confidentialité</a>
+                <a href=""> CGV</a>
+                <a href=""> CGU</a>
             </div>
             <div class="nav-right">
                 {% if app.user %}
-                
+                    <a href=""> Mon compte</a>
+                    <a href=""> Déconnexion</a>
                 {% else %}
-            
+                    <a href=""> Se connecter</a>
+                    <a href=""> S'inscrire</a>
                 {% endif %}
             </div>
         </nav>

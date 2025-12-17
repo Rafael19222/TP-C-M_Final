@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier mon profil{% endblock %}
+
+{% block body %}
+<div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #ddd; border-radius: 8px;">
+    <h1>✏️ Modifier mon profil</h1>
+
+    {{ form_start(profileForm) }}
+        {{ form_row(profileForm.username) }}
+        {{ form_row(profileForm.email) }}
+        {{ form_row(profileForm.plainPassword, {
+            label: 'Nouveau mot de passe (laisser vide pour ne pas changer)',
+            required: false
+        }) }}
+        {{ form_row(profileForm.agreeTerms, {
+            label: 'J\'accepte les conditions (requis pour modification)'
+        }) }}
+
+        <div style="margin-top: 1.5rem;">
+            <button type="submit" style="padding: 0.5rem 1rem; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 0.5rem;">
+                💾 Enregistrer
+            </button>
+            <a href="{{ path('app_profile_show') }}" style="display: inline-block; padding: 0.5rem 1rem; background-color: #6c757d; color: white; text-decoration: none; border-radius: 4px;">
+                ❌ Annuler
+            </a>
+        </div>
+    {{ form_end(profileForm) }}
+</div>
+{% endblock %}

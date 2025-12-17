@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Profil{% endblock %}
+
+{% block body %}
+<div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #ddd; border-radius: 8px;">
+    <h1>👤 Mon Profil</h1>
+
+    {% for message in app.flashes('success') %}
+        <div style="padding: 1rem; background-color: #d4edda; color: #155724; border-radius: 4px; margin-bottom: 1rem;">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div style="margin: 2rem 0;">
+        <p><strong>Nom d'utilisateur :</strong> {{ user.username }}</p>
+        <p><strong>Email :</strong> {{ user.email }}</p>
+        <p><strong>Rôles :</strong> {{ user.roles|join(', ') }}</p>
+    </div>
+
+    <div style="margin-top: 2rem;">
+        <a href="{{ path('app_profile_edit') }}" style="display: inline-block; padding: 0.5rem 1rem; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px; margin-right: 0.5rem;">
+            ✏️ Modifier mon profil
+        </a>
+        <a href="{{ path('app_home') }}" style="display: inline-block; padding: 0.5rem 1rem; background-color: #6c757d; color: white; text-decoration: none; border-radius: 4px;">
+            ← Retour à l'accueil
+        </a>
+    </div>
+
+    <hr style="margin: 2rem 0;">
+
+    <details style="margin-top: 2rem;">
+        <summary style="cursor: pointer; color: #dc3545; font-weight: bold;">⚠️ Zone dangereuse</summary>
+        <div style="margin-top: 1rem; padding: 1rem; background-color: #f8d7da; border-radius: 4px;">
+            <p style="color: #721c24;"><strong>Attention :</strong> Cette action est irréversible. Votre compte sera définitivement supprimé.</p>
+            <form method="post" action="{{ path('app_profile_delete') }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                <button type="submit" style="padding: 0.5rem 1rem; background-color: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    🗑️ Supprimer mon compte
+                </button>
+            </form>
+        </div>
+    </details>
+</div>
+{% endblock %}
