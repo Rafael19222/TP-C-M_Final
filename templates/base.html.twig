@@ -10,8 +10,27 @@
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+        <style>
+            nav { background-color: #333; padding: 1rem; margin-bottom: 2rem; }
+            nav a { color: white; margin-right: 1.5rem; text-decoration: none; }
+            nav a:hover { text-decoration: underline; }
+            .nav-right { float: right; }
+        </style>
     </head>
     <body>
+        <nav>
+            <div>
+                <a href="{{ path('app_home') }}">Accueil</a>
+            </div>
+            <div class="nav-right">
+                {% if app.user %}
+                
+                {% else %}
+            
+                {% endif %}
+            </div>
+        </nav>
+
         {% block body %}{% endblock %}
     </body>
 </html>
