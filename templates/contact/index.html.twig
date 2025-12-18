@@ -1,27 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contactez-nous - Pokédex{% endblock %}
+{% block title %}Contact - GameShop{% endblock %}
 
 {% block body %}
-<div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; background-color: #fff8f0;">
-    <h1>📬 Formulaire de Contact</h1>
-    <p>Des questions sur nos Pokémon ? Écrivez-nous !</p>
+<div class="container" style="max-width: 600px;">
+    <h1>Contactez-nous</h1>
+    <p style="color: #666; margin-bottom: 2rem;">Des questions sur nos produits ? Écrivez-nous !</p>
 
-    {% for message in app.flashes('success') %}
-        <div style="padding: 1rem; background-color: #d4edda; color: #155724; border-radius: 4px; margin-bottom: 1rem;">
-             {{ message }}
-        </div>
-    {% endfor %}
+    <div class="card">
+        {{ form_start(form) }}
+            <div style="margin-bottom: 1rem;">
+                {{ form_row(form.username, {label: 'Nom'}) }}
+            </div>
+            <div style="margin-bottom: 1rem;">
+                {{ form_row(form.email, {label: 'Email'}) }}
+            </div>
+            <div style="margin-bottom: 1rem;">
+                {{ form_row(form.message, {label: 'Message'}) }}
+            </div>
 
-    {{ form_start(form) }}
-        {{ form_row(form.username, {label: 'Nom'}) }}
-        {{ form_row(form.email, {label: 'Email'}) }}
-        {{ form_row(form.message, {label: 'Message'}) }}
-
-        <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #ffcc00; color: #333; border: 2px solid #ff0000; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 1rem;">
-             Envoyer
-        </button>
-    {{ form_end(form) }}
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                Envoyer
+            </button>
+        {{ form_end(form) }}
+    </div>
+    
+    <p style="margin-top: 2rem;"><a href="{{ path('app_home') }}">← Retour à l'accueil</a></p>
 </div>
 {% endblock %}
 
