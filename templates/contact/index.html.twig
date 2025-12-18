@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous - Pokédex{% endblock %}
+
+{% block body %}
+<div style="max-width: 600px; margin: 2rem auto; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; background-color: #fff8f0;">
+    <h1>📬 Formulaire de Contact</h1>
+    <p>Des questions sur nos Pokémon ? Écrivez-nous !</p>
+
+    {% for message in app.flashes('success') %}
+        <div style="padding: 1rem; background-color: #d4edda; color: #155724; border-radius: 4px; margin-bottom: 1rem;">
+             {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+        {{ form_row(form.username, {label: 'Nom'}) }}
+        {{ form_row(form.email, {label: 'Email'}) }}
+        {{ form_row(form.message, {label: 'Message'}) }}
+
+        <button type="submit" style="padding: 0.75rem 1.5rem; background-color: #ffcc00; color: #333; border: 2px solid #ff0000; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 1rem;">
+             Envoyer
+        </button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}
+
