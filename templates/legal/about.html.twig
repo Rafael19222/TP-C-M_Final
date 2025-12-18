@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous ? - PokéShop{% endblock %}
+
+{% block body %}
+<div style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+    <h1>👥 Qui sommes-nous ?</h1>
+    
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Bienvenue sur PokéShop, votre boutique Pokémon préférée ! 🎮</p>
+    
+    <h2>Notre équipe</h2>
+    
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+        <div style="flex: 1; min-width: 200px; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+            <div style="font-size: 3rem;">👨‍💻</div>
+            <h3>Rafael Spinola</h3>
+            <p>Fondateur & Développeur</p>
+            <p style="color: #666;">Passionné de Pokémon depuis 1999. Dresseur niveau 50.</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 200px; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+            <div style="font-size: 3rem;">🎨</div>
+            <h3>Pikachu</h3>
+            <p>Mascotte officielle</p>
+            <p style="color: #666;">Pika pika ! Expert en relation client.</p>
+        </div>
+    </div>
+    
+    <h2>Notre mission</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nous sommes dédiés à fournir les meilleurs produits Pokémon à tous les dresseurs !</p>
+    
+    <h2>Nous contacter</h2>
+    <p>Une question ? <a href="{{ path('app_contact') }}">Envoyez-nous un message</a> !</p>
+
+    <p style="margin-top: 2rem;"><a href="{{ path('app_home') }}">← Retour à l'accueil</a></p>
+</div>
+{% endblock %}

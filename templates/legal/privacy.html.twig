@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de Confidentialité - PokéShop{% endblock %}
+
+{% block body %}
+<div style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+    <h1>🔒 Politique de Confidentialité</h1>
+    
+    <h2>Collecte des données</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nous collectons les données suivantes : nom, email, adresse. Ces données sont nécessaires pour le traitement de vos commandes.</p>
+    
+    <h2>Utilisation des données</h2>
+    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    
+    <h2>Conservation des données</h2>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Vos données sont conservées pendant une durée de 3 ans.</p>
+    
+    <h2>Vos droits (RGPD)</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <ul>
+        <li>Droit d'accès à vos données</li>
+        <li>Droit de rectification</li>
+        <li>Droit à l'effacement</li>
+        <li>Droit à la portabilité</li>
+        <li>Droit d'opposition</li>
+    </ul>
+    
+    <h2>Cookies</h2>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    <h2>Contact</h2>
+    <p>Pour toute question concernant vos données personnelles : <a href="{{ path('app_contact') }}">Contactez-nous</a></p>
+
+    <p style="margin-top: 2rem;"><a href="{{ path('app_home') }}">← Retour à l'accueil</a></p>
+</div>
+{% endblock %}
