@@ -1,34 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Qui sommes-nous ? - GameShop{% endblock %}
+{% block title %}À propos - GameShop{% endblock %}
 
 {% block body %}
 <div class="container" style="max-width: 800px;">
-    <h1>Qui sommes-nous ?</h1>
+    <h1>À propos de GameShop</h1>
     
-    <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">Bienvenue sur GameShop, votre boutique de jeux vidéo en ligne !</p>
+    <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; line-height: 1.8;">Bienvenue sur GameShop, votre destination privilégiée pour découvrir et acquérir les meilleurs jeux vidéo du marché.</p>
     
-    <h2>Notre équipe</h2>
+    <h2>Mon histoire</h2>
+    <p style="color: #666; line-height: 1.8; margin-bottom: 1.5rem;">GameShop est né de ma passion pour les jeux vidéo. Joueur depuis l'enfance, j'ai toujours rêvé de créer un espace où les gamers peuvent trouver leurs titres préférés dans une expérience d'achat moderne et agréable.</p>
     
+    <p style="color: #666; line-height: 1.8; margin-bottom: 2rem;">En tant que développeur et gamer, j'ai conçu cette plateforme pour allier performance technique et design élégant, afin de vous offrir la meilleure expérience possible.</p>
+    
+    <h2>Mes valeurs</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-        <div class="card" style="text-align: center;">
-            <h3>Rafael Spinola</h3>
-            <p style="color: #888; font-size: 0.9rem;">Fondateur & Développeur</p>
-            <p style="color: #666; margin-top: 0.5rem;">Passionné de jeux vidéo depuis toujours. Gamer niveau max.</p>
+        <div class="card">
+            <h3 style="color: #1a1a1a;">Passion</h3>
+            <p style="color: #666; margin-top: 0.5rem;">Une sélection de jeux choisie avec soin par un véritable passionné pour des passionnés.</p>
         </div>
         
-        <div class="card" style="text-align: center;">
-            <h3>Alex</h3>
-            <p style="color: #888; font-size: 0.9rem;">Community Manager</p>
-            <p style="color: #666; margin-top: 0.5rem;">Toujours prêt à vous aider ! Expert en relation client.</p>
+        <div class="card">
+            <h3 style="color: #1a1a1a;">Qualité</h3>
+            <p style="color: #666; margin-top: 0.5rem;">Des prix compétitifs et un service client réactif pour une satisfaction totale.</p>
+        </div>
+        
+        <div class="card">
+            <h3 style="color: #1a1a1a;">Innovation</h3>
+            <p style="color: #666; margin-top: 0.5rem;">Une plateforme moderne et intuitive, en constante évolution pour répondre à vos attentes.</p>
         </div>
     </div>
     
-    <h2>Notre mission</h2>
-    <p style="color: #666;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nous sommes dédiés à fournir les meilleurs jeux vidéo à tous les gamers !</p>
+    <h2 style="margin-top: 2rem;">Ma mission</h2>
+    <p style="color: #666; line-height: 1.8;">Rendre les meilleurs jeux vidéo accessibles à tous, avec une expérience d'achat fluide et sécurisée. Que vous soyez casual gamer ou hardcore player, GameShop est votre partenaire gaming de confiance.</p>
     
-    <h2 style="margin-top: 2rem;">Nous contacter</h2>
-    <p style="color: #666;">Une question ? <a href="{{ path('app_contact') }}">Envoyez-nous un message</a> !</p>
+    <h2 style="margin-top: 2rem;">Contactez-moi</h2>
+    <p style="color: #666;">Une question, une suggestion ? N'hésitez pas à <a href="{{ path('app_contact') }}">me contacter</a>, je serais ravi d'échanger avec vous !</p>
 
     <p style="margin-top: 2rem;"><a href="{{ path('app_home') }}">← Retour à l'accueil</a></p>
 </div>
