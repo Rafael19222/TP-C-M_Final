@@ -25,10 +25,10 @@ final class ContactController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            // Envoi de l'email
+            // Envoi email
             $email = (new Email())
                 ->from($contact->getEmail())
-                ->to('contact@gameshop.com') // Remplace par ton email
+                ->to('contact@gameshop.com') // chang ton email
                 ->subject('Nouveau message de contact : ' . $contact->getUsername())
                 ->html(
                     '<h2>Nouveau message de contact</h2>' .
