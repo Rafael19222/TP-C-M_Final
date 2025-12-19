@@ -439,10 +439,14 @@
 
                     <div class="product-divider"></div>
 
-                    <p class="product-description">
-                        Découvrez {{ product.titre }}, un titre incontournable de notre collection. 
-                        Plongez dans une expérience gaming exceptionnelle et vivez des moments inoubliables.
-                    </p>
+                    <div class="product-description">
+                        {% if product.description %}
+                            <p>{{ product.description }}</p>
+                        {% else %}
+                            <p>Découvrez {{ product.titre }}, un titre incontournable de notre collection. 
+                            Plongez dans une expérience gaming exceptionnelle et vivez des moments inoubliables.</p>
+                        {% endif %}
+                    </div>
 
                     <div class="product-features">
                         <div class="feature-item">

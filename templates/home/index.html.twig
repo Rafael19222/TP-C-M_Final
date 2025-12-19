@@ -15,11 +15,13 @@
         <div class="products-grid">
             {% for product in products %}
                 <div class="product-card">
-                    <img src="{{ product.image }}" alt="{{ product.titre }}" onerror="this.src='https://via.placeholder.com/280x200?text=Image'">
+                    <div class="image-container">
+                        <img src="{{ product.image }}" alt="{{ product.titre }}" onerror="this.src='https://via.placeholder.com/400x400?text=Image+Non+Disponible'">
+                    </div>
                     <div class="content">
                         <h3>{{ product.titre }}</h3>
-                        <p class="price">{{ product.prix }} €</p>
-                        <a href="{{ path('app_product_show', {id: product.id}) }}" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 1rem;">
+                        <p class="price">{{ product.prix|number_format(2, ',', ' ') }} €</p>
+                        <a href="{{ path('app_product_show', {id: product.id}) }}" class="btn btn-primary" style="width: 100%; text-align: center; margin-top: 0.5rem;">
                             Voir détails
                         </a>
                     </div>
